@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import TimePickerInput from './time-picker-input.component';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <TimePickerInput 
+        id="foo"
+        defaultHours="99"
+        defaultMinutes="59"
+        onTimeChange={ (HHMM_String) => { console.log(HHMM_String) } }
+    /> 
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export { default } from './time-picker-input.component';

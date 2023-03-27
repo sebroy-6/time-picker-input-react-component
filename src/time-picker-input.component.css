@@ -1,0 +1,33 @@
+.time-input {
+    padding: 0px 2px 0px 2px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgb(111, 111, 111);
+    border-radius: 4px;
+    color: black;
+}
+
+.time-input input {
+    color: inherit;
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding: 3px 0px 3px 0px;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+.time-input input {
+    cursor: text;
+}
+
+.time-input span {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.clock {
+    margin: 0px 5px 0px 5px;
+}
