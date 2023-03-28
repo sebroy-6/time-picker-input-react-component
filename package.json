@@ -1,6 +1,6 @@
 {
   "name": "time-picker-input-react-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/time-picker-input.component.jsx",
   "keywords": [
     "react",
