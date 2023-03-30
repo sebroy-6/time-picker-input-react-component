@@ -1,6 +1,6 @@
 {
   "name": "time-picker-input-react-component",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "dist/time-picker-input-component.js",
   "files": [
     "dist/",
