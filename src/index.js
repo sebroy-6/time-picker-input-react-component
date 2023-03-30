@@ -15,4 +15,4 @@ root.render(
   </React.StrictMode>
 );
 
-export { default } from './time-picker-input-component.js';
+export default TimePickerInput;
