@@ -2,6 +2,13 @@
   "name": "time-picker-input-react-component",
   "version": "1.0.9",
   "main": "dist/time-picker-input-component.js",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "time-picker-input-component.css"
+  ],
   "keywords": [
     "react",
     "time",
