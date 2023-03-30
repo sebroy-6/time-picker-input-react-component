@@ -1,28 +1,34 @@
-import { resolve } from 'path';
+const path = require('path');
 
-export const mode = 'production';
-export const entry = './src/index.js';
-export const output = {
-    path: resolve(__dirname, 'dist'),
-    filename: 'my-react-component.js',
-    library: 'MyReactComponent',
+module.exports = {
+  mode: 'production',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'time-picker-input-component.js',
+    library: 'time-picker-input-react-component',
     libraryTarget: 'umd',
-};
-export const module = {
+  },
+  module: {
     rules: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env', '@babel/preset-react'],
-                },
-            },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
-};
-export const externals = {
+  },
+  externals: {
     react: 'react',
     'react-dom': 'react-dom',
+  },
 };

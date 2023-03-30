@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import './time-picker-input.component.css';
+import './time-picker-input-component.css';
 
 export default function TimePickerInput({ onTimeChange, defaultHours = "", defaultMinutes = "", id }) {
     const [hours, setHours] = useState('');

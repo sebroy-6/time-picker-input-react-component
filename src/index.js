@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import TimePickerInput from './time-picker-input.component';
+import TimePickerInput from './time-picker-input-component.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,4 +15,4 @@ root.render(
   </React.StrictMode>
 );
 
-export { default } from './time-picker-input.component';
+export { default } from './time-picker-input-component.js';
