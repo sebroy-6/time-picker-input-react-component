@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import './time-picker-input-component.css';
 
-export default function TimePickerInput({ onTimeChange, defaultHours = "", defaultMinutes = "", id }) {
+export default function TimePickerInput({ onTimeChange, value="", id }) {
     const [hours, setHours] = useState('');
     const [minutes, setMinutes] = useState('');
 
@@ -10,34 +10,25 @@ export default function TimePickerInput({ onTimeChange, defaultHours = "", defau
     const minutesInput = useRef();
 
     useEffect(() => {
-        if (defaultHours) {
-            if (typeof defaultHours === 'string' || typeof defaultHours === 'number') {
-                if (!isNaN(defaultHours)) {
-                    const nbHours = Number(defaultHours);
-                    if (nbHours < 100 && nbHours >= 0) setHours(defaultHours);
+        if (value) {
+            if (typeof value === 'string') {
+                const timeRegex = /^(0?[0-9]|[1-9][0-9]):[0-5][0-9]$/
+                if (timeRegex.test(value)) {
+                    setHours(value.split(':')[0]);
+                    setMinutes(value.split(':')[1]);
                 }
             }
         }
-        if (defaultMinutes) {
-            if (typeof defaultMinutes === 'string' || typeof defaultMinutes === 'number') {
-                if (!isNaN(defaultMinutes)) {
-                    const nbMinutes = Number(defaultMinutes);
-                    if (nbMinutes < 60 && nbMinutes >= 0) setMinutes(defaultMinutes);
-                }
-            }
-        }
-    }, [defaultHours, defaultMinutes]);
+    }, [value]);
 
     useEffect(() => {
+        const timeRegex = /^([0-9]|[1-9][0-9]):[0-5][0-9]$/
         if (onTimeChange) {
-            if (Number(minutes)) {
+            if (timeRegex.test(`${hours}:${minutes}`)) {
                 if (Number(hours)) onTimeChange(`${hours}:${minutes}`);
                 else onTimeChange(`0:${minutes}`);
             }
-            else if (Number(hours)) {
-                onTimeChange(`${hours}:00`);
-            }
-            else onTimeChange("0:00");
+            else if (/^0?[0-9]:[0-5][0-9]$/.test(`${hours}:${minutes}`)) onTimeChange(`${hours[1]}:${minutes}`);
         }
     }, [hours, minutes, onTimeChange]);
 

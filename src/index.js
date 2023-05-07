@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import TimePickerInput from './time-picker-input-component.js';
+import App from './app';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TimePickerInput 
-        id="foo"
-        defaultHours="99"
-        defaultMinutes="59"
-        onTimeChange={ (HHMM_String) => { console.log(HHMM_String) } }
-    /> 
+    <App>
+    </App>
   </React.StrictMode>
 );
 

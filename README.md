@@ -37,8 +37,7 @@ Here is an exemple including all the possible properties to include in the compo
 ```jsx
 <TimePickerInput 
     id="foo"
-    defaultHours="99"
-    defaultMinutes="59"
+    value="99:59"
     onTimeChange={ (HHMM_String) => { console.log(HHMM_String) } }
 /> 
 ```
